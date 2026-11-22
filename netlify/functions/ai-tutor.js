@@ -15,7 +15,7 @@ exports.handler = async function (event) {
     const uPrompt = (body.prompt || "اشرح لي هذا السؤال والقاعدة ببساطة.").toString().slice(0, 800);
     const ctx = (body.context || "").toString().slice(0, 1200);
     const sys = "أنت «المعلم الذكي» المساعد للأستاذ العزي الشريف في منصة الشريف للوزاري (منهج الصف الثالث الثانوي اليمني — Crescent Book 6). تحدّث بأسلوب معلم يمني دافئ وواضح ومباشر، واشرح القاعدة باختصار وإتقان بالعربية مع أمثلة إنجليزية واضحة.";
-    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`, {
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${encodeURIComponent(apiKey)}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
